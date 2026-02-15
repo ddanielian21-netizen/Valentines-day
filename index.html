@@ -26,7 +26,8 @@ button {
 </div>
 <br>
 
-<img src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyajA0MThud2FvMzV5ZmlucmNqcG5renVucnJiZTg5aDB0ZG5tZ3NkZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/sEcZk5kCy8H2U/source.gif"
+<img id="startGif"
+     src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyajA0MThud2FvMzV5ZmlucmNqcG5renVucnJiZTg5aDB0ZG5tZ3NkZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/sEcZk5kCy8H2U/source.gif"
      style="width:250px; border-radius:15px;">
 
 <div id="answer" style="display:none;">
@@ -39,6 +40,16 @@ button {
 function sayYes() {
     document.getElementById('question').style.display = 'none';
     document.getElementById('answer').style.display = 'block';
+       document.getElementById("startGif").style.display = "none";
+    for (var i = 0; i < 10; i++) {
+        var heart = document.createElement('p');
+        heart.innerHTML = '❤️';
+        heart.style.fontSize = '50px';
+        heart.style.position = 'fixed';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.top = Math.random() * 100 + '%';
+        document.body.appendChild(heart);
+    }
 
     // Prevent adding the GIF multiple times
     if (!document.getElementById("valentineGif")) {
